@@ -91,12 +91,12 @@ const BusinessModel = () => {
   }
 
   const Block = ({ title, icon: Icon, items, className = '' }: { title: string, icon: any, items: string[], className?: string }) => (
-    <div className={`glass-card p-5 rounded-xl border border-white/10 h-full flex flex-col ${className}`}>
-      <div className="flex items-center gap-3 mb-4">
+    <div className={`glass-card p-5 rounded-xl border border-white/10 h-full flex flex-col overflow-hidden ${className}`}>
+      <div className="flex items-center gap-3 mb-4 flex-shrink-0">
         <Icon className="w-5 h-5 text-indigo-400" />
         <h3 className="text-lg font-bold text-white leading-tight">{title}</h3>
       </div>
-      <ul className="space-y-3 flex-grow">
+      <ul className="space-y-3 flex-grow overflow-y-auto min-h-0 pr-2">
         {items?.map((item, idx) => (
           <li key={idx} className="text-sm text-gray-300 flex items-start gap-2 leading-relaxed">
             <span className="text-indigo-500 mt-1 flex-shrink-0">•</span> 
