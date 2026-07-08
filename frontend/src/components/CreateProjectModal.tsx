@@ -25,7 +25,7 @@ const CreateProjectModal = () => {
     setLoading(true);
 
     try {
-      const response = await api.post('/projects/', formData);
+      await api.post('/projects/', formData);
       closeCreateProjectModal();
       setFormData({ name: '', description: '', industry: '' });
       // Redirect to the new project's dashboard or projects page
